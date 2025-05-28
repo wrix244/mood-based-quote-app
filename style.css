@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("img/3d-render-cherry-tree.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(35, 37, 37, 0.815);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.header {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.mood-options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.mood-options img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.mood-options button:hover {
+  transform: scale(1.1);
+}
+
+#quote-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 60px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.music-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.draw-section {
+  width: 100%; /* container full width */
+  max-width: 600px; /* optional max width */
+  margin: 0 auto; /* center if max-width */
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+canvas {
+  background: white;
+  border-radius: 10px;
+  margin: 10px 0;
+  cursor: crosshair;
+}
+
+button,
+input[type="range"] {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .mood-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mood-options img {
+    margin-bottom: 10px;
+  }
+}
+#angry {
+  background-size: cover;
+  background-position: center;
+}
+#upset {
+  background-size: cover;
+  background-position: center;
+  height: 70px;
+}
+#drawCanvas {
+  width: 100%;
+}

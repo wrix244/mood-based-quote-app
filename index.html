@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mood-Based Quote App</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Quick CSS reset for canvas border and layout */
+      #drawCanvas {
+        border: 1px solid #000;
+        cursor: crosshair;
+        display: block;
+        margin-bottom: 10px;
+      }
+      #quote-box {
+        margin: 20px 0;
+        font-size: 1.2rem;
+        min-height: 40px;
+        font-weight: 600;
+      }
+      .mood-options button {
+        background: none;
+        border: none;
+        margin: 5px;
+        cursor: pointer;
+      }
+      .mood-options img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+      }
+      .mood-options button:hover img {
+        transform: scale(1.1);
+      }
+      .music-player {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #volume-control {
+        width: 150px;
+      }
+      .draw-section p {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Choose Your Mood</div>
+
+      <!-- Mood Buttons -->
+      <div class="mood-options">
+        <button data-mood="happy" aria-label="Happy Mood">
+          <img src="img/b384b877-221c-4c8a-afb9-031dd2e4d3b5.jpg" alt="Happy" />
+        </button>
+        <button data-mood="upset" aria-label="Upset Mood">
+          <img
+            src="img/2a96610f-a097-4549-864d-8a5ea6ff55d7.jpg"
+            alt="Upset"
+            id="upset"
+          />
+        </button>
+        <button data-mood="chill" aria-label="Chill Mood">
+          <img src="img/a114895d-b5a5-49a3-8431-b8460f0dc1c0.jpg" alt="Chill" />
+        </button>
+        <button data-mood="angry" aria-label="Angry Mood">
+          <img src="img/download (1).jpg" alt="Angry" />
+        </button>
+      </div>
+
+      <!-- Quote Display -->
+      <div id="quote-box">
+        <p id="quote">Select a mood to see the quote</p>
+      </div>
+
+      <!-- Music Player -->
+      <div class="music-player">
+        <button id="toggle-music">🎵 Play Music</button>
+        <input
+          type="range"
+          id="volume-control"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.5"
+          aria-label="Music Volume"
+        />
+      </div>
+
+      <!-- Drawing Canvas -->
+      <div class="draw-section">
+        <p>Draw your emotions:</p>
+        <canvas id="drawCanvas"></canvas>
+        <button id="clearCanvas">Clear</button>
+      </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="/audio/audio.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script src="moodbase.js"></script>
+  </body>
+</html>
